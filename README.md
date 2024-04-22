@@ -9,6 +9,9 @@ Power BI report is reading data from those these two files.
 2.  Audit Log Read Permissions (Security Reader is minimum)
 3.	Power BI Desktop (most recent version) [Download link](https://aka.ms/pbidesktopstore)
 4.	Windows PowerShell 7 [Download link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+## Scripts and supporting files
+> [!NOTE]
+> Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
 ## Initial configuration
 1.	Open **Audit-Get-Events.ps1** and edit the folderPath (line 27).
 2.	Open **Audit-Get-Users.ps1** and edit the folderPath (line 29).
