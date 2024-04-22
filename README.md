@@ -27,20 +27,19 @@ Power BI report is reading data from these two files that are stored on SharePoi
 1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
 2. You will get prompted with M365 Copilot Audit Report configuration screen
 
-![screenshot](/img/Picture1.png)
+![screenshot](/img/Picture1a.png)
 
 3. Populate it with parameters captured in Initial configuration section.
-4. Press Load button.
-5. Click Connect
-6. Report will start to pull data from two files
+4. Press Load button and click Connect
+5. Report will start to pull data from two files
 
 ![Alt text](/img/Picture3.png?raw=true)
 
-7. Once the process is complete, your report will display information
+6. Once the process is complete, your report will display information
 
 ![Alt text](/img/Picture4.png?raw=true)
 
-Save the Report as **M365 Copilot Audit Report.pbix** to your PC
+7. Save the Report as **M365 Copilot Audit Report.pbix** to your PC
 ## Anonymizing users
 In case you want to anonymize user Display names in Power BI report:
 
