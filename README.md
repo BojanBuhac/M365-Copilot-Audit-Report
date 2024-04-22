@@ -14,7 +14,7 @@ Power BI report is reading data from these two files that are stored on SharePoi
 2.	Open **Audit-Get-Users.ps1** and edit the folderPath (line 29).
 3.	Open **Copilot_TimeStamp.txt** and configure start date for your report data.
 ## Extracting AD users
-1.	Open Windows PowerShell (not PS7) as Administrator
+1.	Open **Windows PowerShell (not PS7)** as Administrator
 2.	Run **Audit-Get-Users.ps1** from Windows PowerShell
 3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
 4.	Once the script is complete, the folder will include **Copilot_Users.csv** that will contain list of users from your tenant that have M365 Copilot License assigned.
