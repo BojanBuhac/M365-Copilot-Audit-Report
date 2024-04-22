@@ -4,6 +4,20 @@ Power BI report is reading data from those these two files.
 
 ![screenshot](/img/Brand.png)
 
+## Features
+1. Time of the day interaction
+2. Application interaction
+3. Communication channels
+4. Monthly App interactions ratio
+5. Monthly User interactions
+6. Top active users
+7. Weekly Interactions
+8. Top SPO source
+9. Slicers
+    - Time range
+    - Application
+    - Employee
+
 ## Prerequisites
 1.	M365 Copilot Licenses assigned to users and some history with it :)
 2.  Audit Log Read Permissions (Security Reader is minimum)
