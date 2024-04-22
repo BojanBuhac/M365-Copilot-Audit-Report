@@ -6,9 +6,9 @@ Power BI report is reading data from these two files that are stored on SharePoi
 
 ## Prerequisites
 1.	M365 Copilot Licenses assigned to users and some history with it :)
-2.	Power BI Desktop (most recent version)
+2.	Power BI Desktop (most recent version) [Download link] (https://aka.ms/pbidesktopstore)
 3.	Audit Log Read Permissions (Security Reader is minimum)
-4.	Windows PowerShell 7
+4.	Windows PowerShell 7 [Download link] (https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
 ## Initial configuration
 1.	Open **Audit-Get-Events.ps1** and edit the folderPath (line 27).
 2.	Open **Audit-Get-Users.ps1** and edit the folderPath (line 29).
