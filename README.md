@@ -22,29 +22,32 @@ Power BI report is reading data from these two files that are stored on SharePoi
 3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
 4.	Once the script is complete, the folder will include **Copilot_Events.csv** that will contain list of all events from November 1st, 2023, until today.
 ## Power BI Template configuration
-1.	Open M365 Copilot Audit Report.pbit with Power BI Desktop
-2.	You will get prompted with M365 Copilot Audit Report configuration screen
-   ![Alt text](/Images/Picture1.png?raw=true)
-3.	Populate it with parameters captured in OneDrive Sync section.
-4.	Press Load button.
-5.	Authenticate with your Microsoft Account (that has permissions to access SPO site) by clicking Sign In button under Microsoft account section
-   
-   ![Alt text](/Images/Picture2.png?raw=true)
-7.	Click Connect
-8.	Report will start to pull data from two files on SPO site
+1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
+2. You will get prompted with M365 Copilot Audit Report configuration screen
 
-    ![Alt text](/Images/Picture3.png?raw=true)
-9.	Once it completes, your report will display information
-    
-    ![Alt text](/Images/Picture4.png?raw=true)
-11.	Save the Report as **M365 Copilot Audit Report.pbix** to your PC
+![screenshot](/Images/Picture1.png)
+
+3. Populate it with parameters captured in Initial configuration section.
+4. Press Load button.
+5. Click Connect
+6. Report will start to pull data from two files
+
+![Alt text](/Images/Picture3.png?raw=true)
+
+7. Once the process is complete, your report will display information
+
+![Alt text](/Images/Picture4.png?raw=true)
+
+Save the Report as **M365 Copilot Audit Report.pbix** to your PC
 ## Anonymizing users
 In case you want to anonymize user Display names in Power BI report:
 
 ![Alt text](/Images/Picture5.png?raw=true)
-1.	Click on the Employee visual
-2.	Click x next to Employee in Visualizations pane to remove employees.
-3.	Tick the box on Anonymous in Data Pane
-   
-   ![Alt text](/Images/Picture6.png?raw=true)
-5.	Repeat the same steps for Top Active users visual
+
+1. Click on the Employee visual
+2. Click x next to Employee in Visualizations pane to remove employees.
+3. Tick the box on Anonymous in Data Pane
+
+![Alt text](/Images/Picture6.png?raw=true)
+
+4. Repeat the same steps for Top Active users visual
