@@ -1,6 +1,6 @@
 # M365 Copilot Audit Power BI Report
 This report is using data from Purview Audit log and Entra ID exports into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned.
-Power BI report is reading data from these two files that are stored on SharePoint Online Document Library. To sync exported files to SharePoint, you need to create (or use existing) SharePoint Site (Communication or Teams) and sync Document Library to Windows PC where PowerShell scripts will get executed.
+Power BI report is reading data from those these two files.
 
 ![screenshot](/img/Brand.png)
 
