@@ -44,7 +44,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
 2. You will get prompted with M365 Copilot Audit Report configuration screen
 
-![screenshot](/img/Picture1a.png)
+![screenshot](/img/Picture1b.png)
 
 3. Populate it with parameters captured in Initial configuration section.
 4. Press Load button and click Connect
