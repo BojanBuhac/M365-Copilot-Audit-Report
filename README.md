@@ -12,7 +12,8 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 6. Top active users
 7. Weekly Interactions
 8. Top SPO source
-9. Slicers
+9. Employee names anonymizer
+10. Slicers
     - Time range
     - Application
     - Employee
