@@ -54,5 +54,5 @@ if (! $pathExists) {
 
 # Write the time of completion to Copilot_TimeStamp.txt
 $today = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-Add-Content -Path $log -Value $today + "`r`n"
+Add-Content -Path $log -Value $today
 Write-Host "The Copilot_TimeStamp.txt file was last updated at: $today"
