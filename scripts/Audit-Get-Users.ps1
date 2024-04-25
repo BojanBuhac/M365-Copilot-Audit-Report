@@ -1,34 +1,24 @@
-# Audit log export script for Copilot Interactions Events
+# Check if MG Online module is already installed
+$module = Get-Module -ListAvailable | Where-Object { $_.Name -eq 'Microsoft.Graph' }
 
-# Check if AzureAD Online module is already installed
-$moduleAzureADInstalled = Get-Module -ListAvailable | Where-Object { $_.Name -eq 'AzureAD' }
-
-if ($moduleAzureADInstalled -eq $null) {
-    # AzureAD module is not installed, attempt to install it
+if ($module -eq $null) {
     try {
-        Write-Host "Installing AzureAD module..."
-        Install-Module -Name AzureAD -Force -AllowClobber -Scope CurrentUser
-    } catch {
-        Write-Host "Failed to install AzureAD module: $_"
+        Write-Host "Installing module..."
+        Install-Module -Name Microsoft.Graph -Force -AllowClobber -Scope CurrentUser
+    } 
+    catch {
+        Write-Host "Failed to install module: $_"
         exit
     }
 }
-
-# Import the AzureAD module
-Import-Module AzureAD
-
-# Connect to AzureAD
+# Connect to Microsoft Graph
 try {
-    Connect-AzureAD
-    Write-Host "Connected to AzureAD."
+    Connect-mggraph -Scopes "User.Read.All" -NoWelcome
+    Write-Host "Connected to Microsoft Graph."
 } catch {
-    Write-Host "Failed to connect to AzureAD: $_"
+    Write-Host "Failed to connect to Microsoft Graph: $_"
 }
 
-# Define the folder path
-$folderPath = "C:\M365CopilotReport\"
-
-# Path to the output CSV file
-$outputCsv = $folderPath + "Copilot_Users.csv"
-
-Get-AzureADUser -All $true | Select DisplayName, UserPrincipalName, jobTitle, City, Country, UsageLocation -ExpandProperty AssignedLicenses | Where-Object {$_.SkuID -eq '639dec6b-bb19-468b-871c-c5c441c4b0cb'} | Export-csv $outputCsv
+# CSV File path  
+$csvUserspath = "C:\M365CopilotReport\Copilot_Users.csv"
+Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq $('639dec6b-bb19-468b-871c-c5c441c4b0cb'))" -ConsistencyLevel eventual -CountVariable CopilotLicensedUserCount -All -Property DisplayName, UserPrincipalName, jobTitle, City, Country, UsageLocation | Select-Object DisplayName, UserPrincipalName, jobTitle, City, Country, UsageLocation | Export-csv $csvUserspath
