@@ -53,7 +53,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 
 6. Once the process is complete, your report will display information
 
-![Alt text](/img/Picture4.png?raw=true)
+![Alt text](/img/Brand2.png?raw=true)
 
 7. Save the Report as **M365 Copilot Audit Report.pbix** to your PC
 ## Anonymizing users
@@ -65,6 +65,6 @@ In case you want to anonymize user Display names in Power BI report:
 2. Click x next to Employee in Visualizations pane to remove employees.
 3. Tick the box on Anonymous in Data Pane
 
-![Alt text](/img/Picture6.png?raw=true)
+![Alt text](/img/Picture4a.png?raw=true)
 
 4. Repeat the same steps for Top Active users visual
