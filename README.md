@@ -26,9 +26,8 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 > [!NOTE]
 > Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
 ## Initial configuration
-1.	Open **Audit-Get-Events.ps1** and edit the folderPath (line 27).
-2.	Open **Audit-Get-Users.ps1** and edit the folderPath (line 29).
-3.	Open **Copilot_TimeStamp.txt** and configure start date for your report data.
+1.	Open **Audit-Get-Events.ps1** and edit the $csvpath (line 29).
+2.	Open **Audit-Get-Users.ps1** and edit the $folderPath (line 29).
 ## Extracting AD users
 1.	Open **Windows PowerShell (not PS7)** as Administrator
 2.	Run **Audit-Get-Users.ps1** from Windows PowerShell
