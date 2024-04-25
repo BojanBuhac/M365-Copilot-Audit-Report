@@ -1,4 +1,5 @@
 # Export script for Microsoft Copilot Interactions events from Purview Audit Log
+# Special thanks goes to https://github.com/12Knocksinna/Office365itpros team
 
 # Check if Exchange Online module is already installed
 $module = Get-Module -ListAvailable | Where-Object { $_.Name -eq 'ExchangeOnlineManagement' }
