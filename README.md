@@ -27,9 +27,9 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 > Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
 ## Initial configuration
 1.	Open **Audit-Get-Events.ps1** and edit the $csvpath (line 29).
-2.	Open **Audit-Get-Users.ps1** and edit the $folderPath (line 29).
+2.	Open **Audit-Get-Users.ps1** and edit the $csvUserspath (line 23).
 ## Extracting AD users
-1.	Open **Windows PowerShell (not PS7)** as Administrator
+1.	Run PowerShell 7 as Administrator
 2.	Run **Audit-Get-Users.ps1** from Windows PowerShell
 3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
 4.	Once the script is complete, the folder will include **Copilot_Users.csv** that will contain list of users from your tenant that have M365 Copilot License assigned.
@@ -37,7 +37,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 1.	Run PowerShell 7 as Administrator
 2.	Run **Audit-Get-Events.ps1** from Windows PowerShell
 3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
-4.	Once the script is complete, the folder will include **Copilot_Events.csv** that will contain list of all events from November 1st, 2023, until today.
+4.	Once the script is complete, the folder will include **Copilot_Events.csv** that will contain list of all copilot events that exist in your Audit log.
 ## Power BI Template configuration
 1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
 2. You will get prompted with M365 Copilot Audit Report configuration screen
