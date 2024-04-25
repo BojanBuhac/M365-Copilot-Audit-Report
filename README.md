@@ -5,18 +5,17 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 
 ## Features
 1. Time of the day interaction
-2. Application interaction
-3. Communication channels
-4. Monthly App interactions ratio
-5. Monthly User interactions
-6. Top active users
-7. Weekly Interactions
-8. Top SPO source
-9. Employee names anonymizer
-10. Slicers
+2. Application ratio
+3. Monthly interactions
+4. Weekly Interactions
+5. Top active users
+6. Top sources
+7. Employee names anonymizer
+8. Slicers
     - Time range
     - Application
     - Employee
+    - Position
 
 ## Prerequisites
 1.	M365 Copilot Licenses assigned to users and some history with it :)
