@@ -42,7 +42,7 @@ If (!($Records)) {
 $Report = [System.Collections.Generic.List[Object]]::new()
 ForEach ($Rec in $Records) {
     $AuditData = $Rec.AuditData | ConvertFrom-Json
-    $CopilotApp = 'Copilot for Microsoft 365'; $Context = $null; $CopilotLocation = $null
+    $CopilotApp = 'Copilot for M365'; $Context = $null; $CopilotLocation = $null
     
     Switch ($Auditdata.copiloteventdata.contexts.type) {
         "xlsx" {
@@ -66,7 +66,7 @@ ForEach ($Rec in $Records) {
     If ($Auditdata.copiloteventdata.contexts.id -like "*https://teams.microsoft.com/*") {
         $CopilotApp = "Teams"
     } ElseIf ($AuditData.CopiloteventData.AppHost -eq "bizchat") {
-        $CopilotApp = "Copilot for Microsoft 365 Chat"
+        $CopilotApp = "Copilot for M365 Chat"
     }
 
     If ($Auditdata.copiloteventdata.contexts.id) {
