@@ -61,6 +61,9 @@ ForEach ($Rec in $Records) {
         "whiteboard" {
             $CopilotApp = "Whiteboard"    
         }
+        "loop"{
+            $CopilotApp = "Loop"
+        }
     }
 
     If ($Auditdata.copiloteventdata.contexts.id -like "*https://teams.microsoft.com/*") {
