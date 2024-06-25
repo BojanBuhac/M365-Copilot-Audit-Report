@@ -1,5 +1,5 @@
 # M365 Copilot Audit Power BI Report
-This report is using data from Purview Audit log and Entra ID exports into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them.
+This report is using data from Purview Audit log and Entra ID exports into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them. Report contains Overall and Adoption pages that allow M365 Champs to monitor behavior of M365 Copilot licensed users.
 
 ![screenshot](/img/BrandV2Anon.png)
 
@@ -11,7 +11,8 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 5. Top active users
 6. Top sources
 7. Employee names anonymizer
-8. Slicers
+8. Active vs total licenses assigned
+10. Slicers
     - Time range
     - Application
     - Employee
