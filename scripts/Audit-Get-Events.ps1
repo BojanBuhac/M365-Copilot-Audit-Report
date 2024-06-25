@@ -28,7 +28,16 @@ try {
 #Modify the values for the following variables to configure the audit log search.
 $logFile = "C:\M365CopilotReport\AuditScriptLog.txt"
 $outputFile = "C:\M365CopilotReport\Copilot_Events.csv"
-[DateTime]$start = [DateTime]::UtcNow.AddDays(-365)
+If(Test-Path $outputFile -PathType Leaf)
+    {
+        $lastEvent = Get-Content $outputFile -ErrorAction SilentlyContinue | Select-Object -Last 1
+        $lastProcessedTime = $lastEvent.Substring(0, $lastEvent.IndexOf(","))
+        $start = [DateTime]$lastProcessedTime.Substring(1,20)
+    } 
+    else
+    {
+        [DateTime]$start = [DateTime]::UtcNow.AddDays(-365)
+    }
 [DateTime]$end = [DateTime]::UtcNow
 $record = "CopilotInteraction"
 $resultSize = 5000
