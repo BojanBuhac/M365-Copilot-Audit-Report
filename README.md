@@ -1,7 +1,7 @@
 # M365 Copilot Audit Power BI Report
 This report is using data from Purview Audit log and Entra ID exports into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them.
 
-![screenshot](/img/Brand3.png)
+![screenshot](/img/BrandV2Anon.png)
 
 ## Features
 1. Time of the day interaction
@@ -52,7 +52,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 
 6. Once the process is complete, your report will display information
 
-![Alt text](/img/Brand2.png?raw=true)
+![Alt text](/img/BrandV2Anon.png?raw=true)
 
 7. Save the Report as **M365 Copilot Audit Report.pbix** to your PC
 ## Anonymizing users
