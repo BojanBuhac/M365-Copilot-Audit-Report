@@ -31,8 +31,7 @@ $outputFile = "C:\M365CopilotReport\Copilot_Events.csv"
 If(Test-Path $outputFile -PathType Leaf)
     {
         $lastEvent = Get-Content $outputFile -ErrorAction SilentlyContinue | Select-Object -Last 1
-        $lastProcessedTime = $lastEvent.Substring(0, $lastEvent.IndexOf(","))
-        $start = [DateTime]$lastProcessedTime.Substring(1,20)
+        $start = [DateTime]$lastEvent.Substring(1,20)
     } 
     else
     {
