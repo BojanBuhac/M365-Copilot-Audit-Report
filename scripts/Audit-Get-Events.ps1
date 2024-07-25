@@ -123,6 +123,8 @@ while ($true)
                     $CopilotApp = "Teams"
                 } ElseIf ($AuditData.CopiloteventData.AppHost -eq "bizchat") {
                     $CopilotApp = "Copilot for M365 Chat"
+                }  ElseIf ($AuditData.CopiloteventData.AppHost -eq "Outlook") {
+                    $CopilotApp = "Outlook"
                 }
             
                 If ($Auditdata.copiloteventdata.contexts.id) {
