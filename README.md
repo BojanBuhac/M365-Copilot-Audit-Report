@@ -22,6 +22,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
     - Application
     - Employee
     - Position
+    - Departments
 
 ## Prerequisites
 1.	M365 Copilot Licenses assigned to users and some history with it :)
