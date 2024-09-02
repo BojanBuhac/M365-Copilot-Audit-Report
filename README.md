@@ -4,6 +4,8 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 ![screenshot](/img/BrandV2Anon.png)
 ### Adoption report
 ![screenshot](/img/BrandV2b.png)
+### Trend
+![screenshot](/img/Trend.png)
 
 ## Features
 1. Time of the day interaction
@@ -14,6 +16,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 6. Top sources
 7. Employee names anonymizer
 8. Active vs total licenses assigned
+9. Trend comparison
 10. Slicers
     - Time range
     - Application
