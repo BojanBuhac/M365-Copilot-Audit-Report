@@ -28,6 +28,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 2.  Audit Log Read Permissions (Security Reader is minimum)
 3.	Power BI Desktop (most recent version) [Download link](https://aka.ms/pbidesktopstore)
 4.	Windows PowerShell 7 [Download link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+5.	User Departments populated in Entra (Azure AD)
 ## Scripts and supporting files
 > [!NOTE]
 > Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
