@@ -74,4 +74,4 @@ In case you want to anonymize user Display names in Power BI report:
 
 ![Alt text](/img/Picture4a.png?raw=true)
 
-4. Repeat the same steps for Top Active users visual
+4. Repeat the same steps for Top Active users visual and Top users on Trends page
