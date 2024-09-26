@@ -40,7 +40,7 @@ If(Test-Path $outputFile -PathType Leaf)
 [DateTime]$end = [DateTime]::UtcNow
 $record = "CopilotInteraction"
 $resultSize = 5000
-$intervalMinutes = 60000
+$intervalMinutes = 1440
 
 #Start script
 [DateTime]$currentStart = $start
