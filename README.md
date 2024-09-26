@@ -16,7 +16,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 6. Top sources
 7. Employee names anonymizer
 8. Active vs total licenses assigned
-9. Trend comparison
+9. Trend comparison between two departments
 10. Slicers
     - Time range
     - Application
