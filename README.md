@@ -47,7 +47,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
 4.	Once the script is complete, the folder will include **Copilot_Events.csv** that will contain list of all copilot events that exist in your Audit log.
 > [!NOTE]
-> First time you run the script script may run for long time depending on the number of user interactions in Purview Audit Log. Once it completes, next time you run the same script it will read last event from csv file and use it as start date/time. 
+> First time you run the **Audit-Get-Events.ps1** script may run for long time depending on the number of user interactions in Purview Audit Log. Once it completes, next time you run the same script it will read last event from csv file and use it as start date/time. 
 ## Power BI Template configuration
 1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
 2. You will get prompted with M365 Copilot Audit Report configuration screen
