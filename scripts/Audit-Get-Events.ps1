@@ -117,6 +117,10 @@ while ($true)
                     "loop"{
                         $CopilotApp = "Loop"
                     }
+                    "StreamVideo" {
+                        $CopilotApp = "Stream"
+                        $CopilotLocation = "Stream video player"
+                    }
                 }
             
                 If ($Auditdata.copiloteventdata.contexts.id -like "*https://teams.microsoft.com/*") {
@@ -146,10 +150,14 @@ while ($true)
                 } ElseIf ($Auditdata.copiloteventdata.contexts.id -like "*/personal/*") {
                     $CopilotLocation = "OneDrive for Business"
                 } 
-                # Make sure that we report the resources used by Copilot
-                $AccessedResources = $AuditData.copiloteventdata.accessedResources.name -join ", "
-                $AccessedResourceLocations = $AuditData.copiloteventdata.accessedResources.id -join ", "
-            
+                 # Make sure that we report the resources used by Copilot and the action (like read) used to access the resource
+                [array]$AccessedResources = $AuditData.copiloteventdata.accessedResources.name | Sort-Object -Unique
+                [string]$AccessedResources = $AccessedResources -join ", "
+                [array]$AccessedResourceLocations = $AuditData.copiloteventdata.accessedResources.id | Sort-Object -Unique
+                [string]$AccessedResourceLocations = $AccessedResourceLocations -join ", "
+                [array]$AccessedResourceActions = $AuditData.copiloteventdata.accessedResources.action | Sort-Object -Unique
+                [string]$AccessedResourceActions = $AccessedResourceActions -join ", "
+    
                 $ReportLine = [PSCustomObject][Ordered]@{
                     TimeStamp                       = (Get-Date $Rec.CreationDate -format "dd-MMM-yyyy HH:mm:ss")
                     User                            = $Rec.UserIds
@@ -158,11 +166,11 @@ while ($true)
                     'App context'                   = $Context   
                     'Accessed Resources'            = $AccessedResources
                     'Accessed Resource Locations'   = $AccessedResourceLocations
+                    Action                          = $AccessedResourceActions
                 }
                 $Report.Add($ReportLine)
             }
 
-            
             $Report | export-csv -Path $outputFile -Append -NoTypeInformation
 
             $currentTotal = $Records[0].ResultCount
