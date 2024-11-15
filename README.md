@@ -26,7 +26,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 
 ## Prerequisites
 1.	M365 Copilot Licenses assigned to users and some history with it :)
-2.  Security reader Role (minimum)
+2.  Security Reader role (minimum)
 ![screenshot](/img/SecurityReader.png)
 3.  Member of Purview Role Groups (Audit Reader)
 ![screenshot](/img/PurviewAudit.png)
