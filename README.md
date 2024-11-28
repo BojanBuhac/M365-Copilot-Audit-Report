@@ -64,7 +64,7 @@ This report is using data from Purview Audit log and Entra ID exports into two C
 > - 360 - 5000/4 hours
 ## Power BI Template configuration
 1. Open M365 Copilot Audit Report.pbit with Power BI Desktop
-2. You will get prompted with M365 Copilot Audit Report configuration screen
+2. You will get prompted with M365 Copilot Audit Report configuration screen (for Approximate interaction time in seconds type 30)
 
 ![screenshot](img/Paremeters_v3.png)
 
