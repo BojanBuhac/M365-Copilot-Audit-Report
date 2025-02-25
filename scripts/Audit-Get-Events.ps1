@@ -130,7 +130,7 @@ while ($true)
                 }  ElseIf ($AuditData.CopiloteventData.AppHost -eq "Outlook") {
                     $CopilotApp = "Outlook"
                 }   ElseIf ($AuditData.CopiloteventData.AppHost -eq "Copilot Studio") {
-                    $CopilotApp = "Copilot Agent"
+                    $CopilotApp = "Copilot Studio Agent"
                 }
             
                 If ($Auditdata.copiloteventdata.contexts.id) {
