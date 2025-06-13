@@ -36,7 +36,7 @@ This report is using data from Purview Audit log and Entra ID exports that get s
 
 ## Prerequisites
 > [!NOTE]
-> Based on Search-Unified audit log permissions, unsure these roles are assigned to user:
+> Based on Search-Unified audit log permissions, insure these roles are assigned to user:
 > ![screenshot](/img/SearchPermissions.png)
 > Audit Logs
 > Information Protection Analyst, Information Protection Investigator, View-Only Audit Logs
