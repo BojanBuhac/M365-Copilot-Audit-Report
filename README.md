@@ -35,6 +35,13 @@ This report is using data from Purview Audit log and Entra ID exports that get s
     - Departments
 
 ## Prerequisites
+> [!NOTE]
+> Based on Search-Unified audit log permissions, unsure these roles are assigned to user:
+> ![screenshot](/img/SearchPermissions.png)
+> Audit Logs
+> Information Protection Analyst, Information Protection Investigator, View-Only Audit Logs
+
+Download the latest version of all files from scripts folder. 
 1.	M365 Copilot Licenses assigned to users and some history with it :)
 2.  Security Reader role (minimum)
 ![screenshot](/img/SecurityReader.png)
