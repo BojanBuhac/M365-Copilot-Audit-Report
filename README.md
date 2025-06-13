@@ -56,6 +56,12 @@ Download the latest version of all files from scripts folder.
 ## Initial configuration
 1.	Open **Audit-Get-Events.ps1** and edit the $logFile (line 29) and $outputFile (line 30) so it matches your desired path.
 2.	Open **Audit-Get-Users.ps1** and edit the $csvUserspath (line 23) so it matches your desired path.
+
+> [!NOTE]
+> GCC tenants Copilot SKU GUID
+> The SkuID for Copilot in GCC environments is different than the one for commercial environments, resulting in an empty Copilot_Users.csv when Audit-Get-Users.ps1 is run. Line 24 can be replaced with the following to fix this:
+> Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq $('a920a45e-67da-4a1a-b408-460d7a2453ce'))" -ConsistencyLevel eventual -CountVariable CopilotLicensedUserCount -All -Property DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Select-Object DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Export-csv $csvUserspath -NoTypeInformation
+
 ## Extracting AD users
 1.	Run PowerShell 7 as Administrator
 2.	Run **Audit-Get-Users.ps1** from Windows PowerShell
