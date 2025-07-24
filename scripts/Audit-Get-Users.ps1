@@ -21,5 +21,11 @@ try {
 
 # CSV File path  
 $csvUserspath = "C:\M365CopilotReport\Copilot_Users.csv"
-Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq $('639dec6b-bb19-468b-871c-c5c441c4b0cb'))" -ConsistencyLevel eventual -CountVariable CopilotLicensedUserCount -All -Property DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Select-Object DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Export-csv $csvUserspath -NoTypeInformation
+
+# Select the Copilot License SKU ID based on your tenant type
+$licenseSKU = '639dec6b-bb19-468b-871c-c5c441c4b0cb' # Commercial
+#$licenseSKU = 'a920a45e-67da-4a1a-b408-460d7a2453ce' # GCC
+
+# Export the list of licensed users to CSV
+Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq $($licenseSKU))" -ConsistencyLevel eventual -CountVariable CopilotLicensedUserCount -All -Property DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Select-Object DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Export-csv $csvUserspath -NoTypeInformation
 
