@@ -1,4 +1,8 @@
 # M365 Copilot Audit Power BI Report
+> [!NOTE]
+> Added report page for Copilot Studio Agents Usage. Download and re-run Audit-Get-Events.ps1
+> > ![screenshot](/img/Agents.png)
+
 This report is using data from Purview Audit log and Entra ID exports that get saved into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them. Report contains Overall and Adoption pages that allow M365 Champs to monitor behavior of M365 Copilot licensed users.
 ### Overall report
 ![screenshot](/img/Overall_v3.png)
@@ -13,18 +17,19 @@ This report is using data from Purview Audit log and Entra ID exports that get s
 
 ## Features
 1. Time of the day interaction
-2. Application ratio
-3. Monthly interactions
-4. Weekly Interactions
-5. Top active users
-6. Top sources
-7. Time spent in minutes
-8. Time spent in hours and minutes
-9. Time decomposition by departments and positions
-10. Employee names anonymizer
-11. Active vs total licenses assigned
-12. Trend comparison between two departments
-13. Slicers
+2. Copilot Studio Agents Usage
+3. Application ratio
+4. Monthly interactions
+5. Weekly Interactions
+6. Top active users
+7. Top sources
+8. Time spent in minutes
+9. Time spent in hours and minutes
+10. Time decomposition by departments and positions
+11. Employee names anonymizer
+12. Active vs total licenses assigned
+13. Trend comparison between two departments
+14. Slicers
     - Time range
     - Application
     - Employee
