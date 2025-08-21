@@ -1,11 +1,12 @@
 # M365 Copilot Audit Power BI Report
 > [!NOTE]
 > Added report page for Copilot Studio Agents Usage. Download and re-run Audit-Get-Events.ps1
-> > ![screenshot](/img/Agents.png)
 
 This report is using data from Purview Audit log and Entra ID exports that get saved into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them. Report contains Overall and Adoption pages that allow M365 Champs to monitor behavior of M365 Copilot licensed users.
 ### Overall report
 ![screenshot](/img/Overall_v3.png)
+### Agents usage
+![screenshot](/img/Agents.png)
 ### Impact report
 ![screenshot](/img/Impact_v3.png)
 ### Decomposition report
