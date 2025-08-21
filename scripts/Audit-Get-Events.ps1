@@ -139,6 +139,13 @@ while ($true)
                     $Context = $Auditdata.copiloteventdata.threadid
                     # $CopilotApp = "Teams"
                 }
+
+                $AgentName = ""
+                if ($CopilotApp -eq "Copilot Studio Agent" -and $AuditData.AppIdentity -match '.*_(.+?)$') {
+                    $AgentName = $Matches[1]
+                } elseif ($CopilotApp -eq "Copilot Studio Agent" -and $AuditData.AppIdentity -match '.*-(.+?)$') {
+                    $AgentName = $Matches[1]
+                }   
             
                 If ($Auditdata.copiloteventdata.contexts.id -like "*/sites/*") {
                     $CopilotLocation = "SharePoint Online"
@@ -169,6 +176,7 @@ while ($true)
                     'Accessed Resources'            = $AccessedResources
                     'Accessed Resource Locations'   = $AccessedResourceLocations
                     Action                          = $AccessedResourceActions
+                    AgentName                       = $AgentName
                 }
                 $Report.Add($ReportLine)
             }
@@ -197,3 +205,4 @@ while ($true)
 
 Write-LogFile "END: Retrieving audit records between $($start) and $($end), RecordType=$record, PageSize=$Recordsize, total count: $totalCount."
 Write-Host "Script complete! Finished retrieving audit records for the date range between $($start) and $($end). Total count: $totalCount" -foregroundColor Green
+
