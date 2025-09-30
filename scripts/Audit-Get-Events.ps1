@@ -26,8 +26,8 @@ try {
 }
 
 #Modify the values for the following variables to configure the audit log search.
-$logFile = "C:\Users\bbuha\OneDrive\Projects\M365CopilotReport\v6\AuditScriptLog.txt"
-$outputFile = "C:\Users\bbuha\OneDrive\Projects\M365CopilotReport\v6\Copilot_Events.csv"
+$logFile = "C:\M365CopilotReport\AuditScriptLog.txt"
+$outputFile = "C:\M365CopilotReport\Copilot_Events.csv"
 If(Test-Path $outputFile -PathType Leaf)
     {
         $lastEvent = Get-Content $outputFile -ErrorAction SilentlyContinue | Select-Object -Last 1
@@ -205,4 +205,5 @@ while ($true)
 
 Write-LogFile "END: Retrieving audit records between $($start) and $($end), RecordType=$record, PageSize=$Recordsize, total count: $totalCount."
 Write-Host "Script complete! Finished retrieving audit records for the date range between $($start) and $($end). Total count: $totalCount" -foregroundColor Green
+
 
