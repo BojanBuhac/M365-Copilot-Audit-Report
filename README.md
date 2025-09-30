@@ -1,12 +1,18 @@
-# M365 Copilot Audit Power BI Report
+# M365 Copilot And Copilot Chat Audit Power BI Report
 > [!NOTE]
-> Added report page for Copilot Studio Agents Usage. Download and re-run Audit-Get-Events.ps1
+> Report supports nonlicenced users that user Copilot Chat.
+> 
+> Added support for manager structure. Please make sure you have Managers populated in Entra AD.
 
 This report is using data from Purview Audit log and Entra ID exports that get saved into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them. Report contains Overall and Adoption pages that allow M365 Champs to monitor behavior of M365 Copilot licensed users.
 ### Overall report
-![screenshot](/img/Overall_v3.png)
+![screenshot](/img/HasCopilot.png)
 ### Agents usage
 ![screenshot](/img/Agents.png)
+### Org Comparison
+![screenshot](/img/OrgComparison.png)
+### Org Decomposition
+![screenshot](/img/OrgDecomposition.png)
 ### Impact report
 ![screenshot](/img/Impact_v3.png)
 ### Decomposition report
@@ -46,13 +52,14 @@ This report is using data from Purview Audit log and Entra ID exports that get s
 
 Download the latest version of all files from scripts folder. 
 1.	M365 Copilot Licenses assigned to users and some history with it :)
-2.  Security Reader role (minimum)
+2.	Make sure your users have managers populated for Org related reports
+3.  Security Reader role (minimum)
 ![screenshot](/img/SecurityReader.png)
-3.  Member of Purview Role Groups (Audit Reader)
+4.  Member of Purview Role Groups (Audit Reader)
 ![screenshot](/img/PurviewAudit.png)
-4.	Power BI Desktop (most recent version) [Download link](https://aka.ms/pbidesktopstore)
-5.	Windows PowerShell 7 [Download link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
-6.	User Departments populated in Entra (Azure AD)
+5.	Power BI Desktop (most recent version) [Download link](https://aka.ms/pbidesktopstore)
+6.	Windows PowerShell 7 [Download link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+7.	User Departments populated in Entra (Azure AD)
 ## Scripts and supporting files
 > [!NOTE]
 > Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
