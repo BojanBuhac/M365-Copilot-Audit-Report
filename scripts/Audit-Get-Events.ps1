@@ -26,8 +26,8 @@ try {
 }
 
 #Modify the values for the following variables to configure the audit log search.
-$logFile = "C:\M365CopilotReport\AuditScriptLog.txt"
-$outputFile = "C:\M365CopilotReport\Copilot_Events.csv"
+$logFile = "C:\Users\bbuha\OneDrive\Projects\M365CopilotReport\v6\AuditScriptLog.txt"
+$outputFile = "C:\Users\bbuha\OneDrive\Projects\M365CopilotReport\v6\Copilot_Events.csv"
 If(Test-Path $outputFile -PathType Leaf)
     {
         $lastEvent = Get-Content $outputFile -ErrorAction SilentlyContinue | Select-Object -Last 1
