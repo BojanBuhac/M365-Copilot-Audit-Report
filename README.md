@@ -1,6 +1,6 @@
 # M365 Copilot And Copilot Chat Audit Power BI Report
 > [!NOTE]
-> Report supports nonlicenced users that user Copilot Chat.
+> Report supports non-licenced users that use Copilot Chat.
 > 
 > Added support for manager structure. Please make sure you have Managers populated in Entra AD.
 
