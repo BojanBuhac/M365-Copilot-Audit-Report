@@ -21,7 +21,7 @@ try {
 }
 
 # CSV File path  
-$csvUserspath = "C:\Users\bbuha\OneDrive\Projects\M365CopilotReport\v6\Copilot_Users.csv"
+$csvUserspath = "C:\M365CopilotReport\Copilot_Users.csv"
 
 # Replace with actual Copilot SKU ID(s) from your tenant
 $copilotSkuIds = "639dec6b-bb19-468b-871c-c5c441c4b0cb"
@@ -76,3 +76,4 @@ $results = foreach ($user in $users) {
 # Export to CSV
 $results | Export-Csv $csvUserspath -NoTypeInformation -Encoding UTF8
 Write-Host "Report exported to $csvUserspath"
+
