@@ -3,6 +3,8 @@
 > Report supports non-licenced users that use Copilot Chat.
 > 
 > Added support for manager structure. Please make sure you have Managers populated in Entra AD.
+>
+> Please archive previous csv files, before running new scripts as csv files structure has changed.
 
 This report is using data from Purview Audit log and Entra ID exports that get saved into two CSV files. The first csv file is storing Copilot Interaction events and other csv is exporting user details (Display Name, UPN, Position, City, Country) for users that have M365 copilot license assigned. Power BI report is reading data from those these two files and can display users **Display names** or **anonymize** them. Report contains Overall and Adoption pages that allow M365 Champs to monitor behavior of M365 Copilot licensed users.
 ### Overall report
