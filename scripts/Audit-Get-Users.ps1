@@ -18,10 +18,21 @@ try {
     Write-Host "Connected to Microsoft Graph."
 } catch {
     Write-Host "Failed to connect to Microsoft Graph: $_"
+    exit
+}
+
+# Set up output directory and file path
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$reportDir = Join-Path $scriptPath "M365CopilotReport"
+
+# Create output directory if it doesn't exist
+if (!(Test-Path $reportDir)) {
+    New-Item -ItemType Directory -Path $reportDir -Force
+    Write-Host "Created output directory: $reportDir"
 }
 
 # CSV File path  
-$csvUserspath = "C:\M365CopilotReport\Copilot_Users.csv"
+$csvUserspath = Join-Path $reportDir "Copilot_Users.csv"
 
 # Replace with actual Copilot SKU ID(s) from your tenant
 $copilotSkuIds = "639dec6b-bb19-468b-871c-c5c441c4b0cb"

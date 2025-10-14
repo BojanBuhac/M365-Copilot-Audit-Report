@@ -17,17 +17,30 @@ if ($module -eq $null) {
 
 Import-Module ExchangeOnlineManagement
 
+# Get tenant domain for connection
+$tenantDomain = Read-Host "Enter your tenant domain (e.g., contoso.onmicrosoft.com or contoso.com)"
+
 # Connect to Exchange Online
 try {
-    Connect-ExchangeOnline
-    Write-Host "Connected to Exchange Online."
+    Connect-ExchangeOnline -UserPrincipalName "admin@$tenantDomain" -ShowProgress $true
+    Write-Host "Connected to Exchange Online for tenant: $tenantDomain"
 } catch {
     Write-Host "Failed to connect to Exchange Online: $_"
+    exit
 }
 
 #Modify the values for the following variables to configure the audit log search.
-$logFile = "C:\M365CopilotReport\AuditScriptLog.txt"
-$outputFile = "C:\M365CopilotReport\Copilot_Events.csv"
+$scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+$reportDir = Join-Path $scriptPath "M365CopilotReport"
+
+# Create output directory if it doesn't exist
+if (!(Test-Path $reportDir)) {
+    New-Item -ItemType Directory -Path $reportDir -Force
+    Write-Host "Created output directory: $reportDir"
+}
+
+$logFile = Join-Path $reportDir "AuditScriptLog.txt"
+$outputFile = Join-Path $reportDir "Copilot_Events.csv"
 If(Test-Path $outputFile -PathType Leaf)
     {
         $lastEvent = Get-Content $outputFile -ErrorAction SilentlyContinue | Select-Object -Last 1
