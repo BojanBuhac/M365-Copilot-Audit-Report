@@ -71,8 +71,8 @@ Download the latest version of all files from scripts folder.
 
 > [!NOTE]
 > GCC tenants Copilot SKU GUID
-> The SkuID for Copilot in GCC environments is different than the one for commercial environments, resulting in an empty Copilot_Users.csv when Audit-Get-Users.ps1 is run. Line 24 can be replaced with the following to fix this:
-> Get-MgUser -Filter "assignedLicenses/any(x:x/skuId eq $('a920a45e-67da-4a1a-b408-460d7a2453ce'))" -ConsistencyLevel eventual -CountVariable CopilotLicensedUserCount -All -Property DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Select-Object DisplayName, UserPrincipalName, jobTitle, Department, City, Country, UsageLocation | Export-csv $csvUserspath -NoTypeInformation
+> The SkuID for Copilot in GCC environments is different than the one for commercial environments, resulting in an empty Copilot_Users.csv when Audit-Get-Users.ps1 is run. Line 27 can be replaced with the following to fix this:
+> $copilotSkuIds = "a920a45e-67da-4a1a-b408-460d7a2453ce"
 
 ## Extracting AD users
 1.	Run PowerShell 7 as Administrator
