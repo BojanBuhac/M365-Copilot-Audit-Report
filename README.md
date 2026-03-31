@@ -66,8 +66,13 @@ Download the latest version of all files from scripts folder.
 > [!NOTE]
 > Download all files from [Scripts](https://github.com/BojanBuhac/M365-Copilot-Audit-Report/tree/main/scripts)
 ## Initial configuration
-1.	Open **Audit-Get-Events.ps1** and edit the $logFile (line 29) and $outputFile (line 30) so it matches your desired path.
-2.	Open **Audit-Get-Users.ps1** and edit the $csvUserspath (line 23) so it matches your desired path.
+> [!NOTE]
+> **No manual configuration required!** Both scripts have been updated to automatically create an output directory and handle file paths. The scripts will create a `M365CopilotReport` folder in the same directory as the scripts and save all output files there.
+
+The scripts now automatically:
+- Create the necessary output directory (`M365CopilotReport`) if it doesn't exist
+- Set appropriate file paths relative to the script location
+- Prompt for tenant authentication during execution
 
 > [!NOTE]
 > GCC tenants Copilot SKU GUID
@@ -76,14 +81,17 @@ Download the latest version of all files from scripts folder.
 
 ## Extracting AD users
 1.	Run PowerShell 7 as Administrator
-2.	Run **Audit-Get-Users.ps1** from Windows PowerShell
-3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
-4.	Once the script is complete, the folder will include **Copilot_Users.csv** that will contain list of users from your tenant that have M365 Copilot License assigned.
+2.	Navigate to the directory containing the scripts
+3.	Run **Audit-Get-Users.ps1** from Windows PowerShell
+4.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
+5.	Once the script is complete, a **M365CopilotReport** folder will be created in the same directory as the script, and it will contain **Copilot_Users.csv** with the list of users from your tenant that have M365 Copilot License assigned.
 ## Extracting Copilot Interactions
 1.	Run PowerShell 7 as Administrator
-2.	Run **Audit-Get-Events.ps1** from Windows PowerShell
-3.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
-4.	Once the script is complete, the folder will include **Copilot_Events.csv** that will contain list of all copilot events that exist in your Audit log.
+2.	Navigate to the directory containing the scripts
+3.	Run **Audit-Get-Events.ps1** from Windows PowerShell
+4.	**Enter your tenant domain** when prompted (e.g., `contoso.onmicrosoft.com` or `contoso.com`)
+5.	Once you get prompted to authenticate, authenticate with an account that has at least Security Reader Permissions (Global Admin will work of course).
+6.	Once the script is complete, the **M365CopilotReport** folder will contain **Copilot_Events.csv** with the list of all copilot events that exist in your Audit log.
 > [!NOTE]
 > First time you run the **Audit-Get-Events.ps1** script may run for long time depending on the number of user interactions in Purview Audit Log. Once it completes, next time you run the same script it will read last event from csv file and use it as start date/time.
 > Default script retrieval setting are 5000 records/24 hours. 5000 records is max batch value. **If you expect to have more than 5000/24h records, reduce the number of minutes in script line 43 {$intervalMinutes = 1440} from 1440**:
@@ -96,7 +104,9 @@ Download the latest version of all files from scripts folder.
 
 ![screenshot](img/Paremeters_v3.png)
 
-3. Populate it with parameters captured in Initial configuration section.
+3. For the file paths, navigate to the **M365CopilotReport** folder that was created in the same directory as your scripts:
+   - **Copilot_Events.csv** path: `[YourScriptDirectory]\M365CopilotReport\Copilot_Events.csv`
+   - **Copilot_Users.csv** path: `[YourScriptDirectory]\M365CopilotReport\Copilot_Users.csv`
 4. Press Load button and click Connect
 5. Report will start to pull data from two files
 6. Save the Report as **M365 Copilot Audit Report.pbix** to your PC
